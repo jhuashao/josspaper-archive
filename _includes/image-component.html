@@ -1,0 +1,25 @@
+{%- comment -%} <a href="imgs/1.jpg" data-toggle="lightbox" data-footer="A custom footer text" data-gallery="example-gallery" class="col-sm-4">
+    <img src="imgs/1.jpg" class="img-fluid">
+    <p>A custom footer text</p> {%- endcomment -%}
+
+
+
+{%- comment -%} {% for imgData in site.data.imgData %}
+    {% if imgData contains imgData.caption %}
+        <a href="imgs/{{ imgData.name }}" data-toggle="lightbox" data-footer="{{ imgData.caption }}" data-gallery="example-gallery" class="col-sm-4">
+            <img src="imgs/{{ imgData.name }}" class="img-fluid">
+            <p>{{ imgData.caption }}</p>
+        </a>
+    {% else %}
+        <a href="imgs/{{ imgData.name }}" data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+            <img src="imgs/{{ imgData.name }}" class="img-fluid">
+        </a>
+{% endif %}
+{% endfor %} {%- endcomment -%}
+
+{% for imgData in site.data.imgData %}
+        <a href="imgs/{{ imgData.name }}" data-toggle="lightbox" data-footer="{{ imgData.caption }}" data-gallery="example-gallery" class="col-sm-4">
+            <img src="imgs/{{ imgData.name }}" class="img-fluid">
+            <p>{{ imgData.caption }}</p>
+        </a>
+{% endfor %}
